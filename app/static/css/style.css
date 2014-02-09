@@ -6,8 +6,6 @@ body {
   text-align: center;
 }
 
-img { -ms-interpolation-mode: bicubic; }
-
 h1, h2, h3 {
   font-family: "Helvetica Neue", sans-serif;
   font-weight: normal;
@@ -23,7 +21,6 @@ a {
   right: 0;
   width: 920px;
   height: 500px;
-  /*background: url(../img/ice.png) no-repeat;*/
 }
 
 .logos img {

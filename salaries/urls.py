@@ -17,8 +17,6 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^get_info$', 'app.views.get_info'),
     url(r'^$', 'app.views.home'),
-    url(r'get_info', 'app.views.get_info'),
     url(r'^api/', include(v1_api.urls))
 )

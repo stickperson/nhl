@@ -45,14 +45,14 @@ var salary = (function () {
     var top = parseInt(circle.attr('cy'), 10);
     var left = parseInt(circle.attr('cx'), 10);
     var r = parseInt(circle.attr('r'), 10);
-    var selectedPopupTemplate = _.template(d3.select('#selectedPopupTemplate').html());
+    var popupTemplate = _.template(d3.select('#popupTemplate').html());
     var orderedPlayers = _.sortBy(position.players, function(p) { return - p.cap_hit; });
     var pop = d3.select('#selected-position');
     _.each(position.players, function(player) {
       player['small_cap'] = convertCap(player.cap_hit);
     });
     pop
-      .html(selectedPopupTemplate({
+      .html(popupTemplate({
         data: {
           // team: teams[0],
           players: position.players,
