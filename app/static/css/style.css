@@ -113,11 +113,19 @@ a {
   margin: 0;
 }
 
-#current-team h3 {
+#current-team h3, {
   font-size: 25px;
   font-weight: 100;
   letter-spacing: 10px;
   margin: 5px;
+}
+
+#current-team a {
+  font-size: 25px;
+  font-weight: 100;
+  letter-spacing: 10px;
+  margin: 5px;
+  color: black;
 }
 
 #current-logo {

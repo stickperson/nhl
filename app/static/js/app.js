@@ -136,7 +136,7 @@ var salary = (function () {
       var data = this.data;
 
       $('#current-logo').html('<img src="static/img/logos/' + data.name + '.gif">');
-      $('#current-team').html('<h3>' + data.location + ' ' + data.full_name + '</h3>');
+      $('#current-team').html('<h3><a href="http://' + data.name + '.nhl.com" target="_blank">' + data.location + ' ' + data.full_name + '</a></h3>');
       var seed = {};
       var centers = {
         'position': 'Centers',
