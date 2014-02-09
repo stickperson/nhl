@@ -255,5 +255,3 @@ $(function() {
     });
   });
 });
-
-var hello = '';
