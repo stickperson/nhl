@@ -229,7 +229,7 @@ $(function() {
     orderedTeams = _.sortBy(data.objects, function(d) {
       return d.location;
     });
-    var random = _.random(0, 30);
+    var random = _.random(0, 29);
     var random_team = data.objects[random];
     $.get('api/v1/ateam?name=' + random_team.name, function(d) {
       s.data = d['objects'][0];
