@@ -32,8 +32,6 @@ class DefenseSimpleResource(ModelResource):
         resource_name = 'defense'
 
 class TeamResource(ModelResource):
-    players = fields.ToManyField(PlayerSimpleResource, 'players', full=True)
-    # defense = fields.ToManyField(DefenseSimpleResource, 'defense')
 
     class Meta:
         queryset = Team.objects.all()
@@ -42,6 +40,7 @@ class TeamResource(ModelResource):
         filtering = {
             'name': ALL
         }
+        fields = ['center_cap', 'd_cap', 'full_name', 'g_cap', 'location', 'lw_cap', 'name', 'primary_color', 'rw_cap', 'secondary_color']
         max_limit = 1
 
     def dehydrate(self, bundle):
