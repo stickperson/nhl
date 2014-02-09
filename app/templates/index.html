@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+  <script type="text/javascript" src="static/js/jquery-2.0.3.min.js"></script>
+  <script type="text/javascript" src="static/js/underscore-min.js"></script>
+  <script type="text/javascript" src="static/js/d3.v3.min.js"></script>
+  <script type="text/javascript" src="static/js/app.js"></script>
+
+  <title>salaries</title>
+</head>
+
+<body>
+
+  <script type="text/underscore" id="selectedPopupTemplate">
+    <h2><img src="static/img/logos/<%= data.logo %>.gif">  <%= data.location %> <%= data.team %></h2>
+    <br clear="left">
+    <table cellspacing=0>
+      <tr class="position-summary">
+        <td><h3 style="font-weight: bold"><%= data.position %></h3></td>
+        <td class="salary">$<%= data.cap %></td>
+      </tr>
+      <tr class="padding"><td></td></tr>
+    <% _.each(data.players, function(player) { %>
+      <tr>
+        <td class="player-name">
+          <%= player.full_name %>
+        </td>
+        <td class="salary">$<%= player.small_cap %></td>
+      </tr>
+    <% }) %>
+    </table>
+  </script>
+
+  <script type="text/underscore" id="linksTemplate">
+      <% _.each(data.teams, function(team) { %>
+        <div id="<%= team.name %>"><img src="static/img/logos/<%= team.name %>.gif"></div>
+      <% }) %>
+  </script>
+  <div id="links" class="logos"></div>
+  <div id="current-team"></div>
+  <div id="current-logo" class="logos"></div>
+  <svg id="ice">
+    <g id="forwards">
+      <circle id="lw" cx="280" cy="125" r="0" />
+      <circle id="c" cx="460" cy="125" r="0" />
+      <circle id="rw" cx="640" cy="125" r="0" />
+    </g>
+    <g id="defense">
+      <circle id="d" cx="370" cy="275" r="0" />
+      <circle id="d" cx="550" cy="275" r="0" />
+    </g>
+    <g id="goalie">
+      <circle id="g" cx="460" cy="425" r="0" />
+    </g>
+    <div id="selected-position"></div>
+  </svg>
+  
+  <br><br>
+
+  <div id="footer" class="container">
+    <p>
+      Created by <a href="https://github.com/stickperson" target="_blank">Joe Meissler.</a>
+      Data from <a href="http://http://capgeek.com/" target="_blank">capgeek.</a>
+    </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+from resources import PlayerSimpleResource, TeamSimpleResource, TeamResource, DefenseSimpleResource

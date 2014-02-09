@@ -1,0 +1,15 @@
+[global]
+ApplicationName=nhlsalaries
+AwsCredentialFile=/Users/joemeissler/.elasticbeanstalk/aws_credential_file
+DevToolsEndpoint=git.elasticbeanstalk.us-west-2.amazonaws.com
+EnvironmentName=nhlsalaries-env
+EnvironmentType=SingleInstance
+InstanceProfileName=aws-elasticbeanstalk-ec2-role
+OptionSettingFile=/Users/joemeissler/projects/salaries/salaries/.elasticbeanstalk/optionsettings.nhlsalaries-env
+RdsDeletionPolicy=Delete
+RdsEnabled=Yes
+RdsSourceSnapshotName=
+Region=us-west-2
+ServiceEndpoint=https://elasticbeanstalk.us-west-2.amazonaws.com
+SolutionStack=64bit Amazon Linux 2013.09 running Python 2.7
+
