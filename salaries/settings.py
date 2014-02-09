@@ -8,6 +8,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
+from .local import *
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -19,13 +21,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '7^ev%f25xevpx^n6@w$&f&cdsnrgl-3n*ot$s&9_kf3cb@-%$h'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 TEMPLATE_DEBUG = True
-
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -54,32 +51,6 @@ ROOT_URLCONF = 'salaries.urls'
 
 WSGI_APPLICATION = 'salaries.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'nhl_salaries',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',                 # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '3306',                      # Set to empty string for default.
-    }
-} 
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': os.environ['RDS_DB_NAME'],
-#         'USER': os.environ['RDS_USERNAME'],
-#         'PASSWORD': os.environ['RDS_PASSWORD'],
-#         'HOST': os.environ['RDS_HOSTNAME'],
-#         'PORT': os.environ['RDS_PORT'],
-#     }
-# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/

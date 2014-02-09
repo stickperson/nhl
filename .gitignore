@@ -1,5 +1,6 @@
 *.pyc
 .*
 !/.gitignore
+salaries/local.py
 .ebextensions/
 .elasticbeanstalk/
