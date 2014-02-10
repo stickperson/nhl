@@ -11,7 +11,7 @@ var salary = (function () {
   var positions = ['c', 'lw', 'rw', 'd', 'g'];
 
   convertCap =  function(cap) {
-    return (cap/1000000).toString() + 'M';
+    return (cap/1000000).toFixed(3).toString() + 'M';
   };
 
   var positionSelected = function(p) {

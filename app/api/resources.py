@@ -22,7 +22,7 @@ class TeamSimpleResource(ModelResource):
     class Meta:
         queryset = Team.objects.all()
         resource_name = 'teams'
-        fields = ['location', 'name']
+        fields = ['location', 'name', 'cap_total']
         limit = 35
 
 class DefenseSimpleResource(ModelResource):

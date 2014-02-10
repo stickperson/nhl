@@ -34,8 +34,12 @@
   </script>
 
   <script type="text/underscore" id="linksTemplate">
-      <% _.each(data.teams, function(team) { %>
-        <div id="<%= team.name %>"><img src="static/img/logos/<%= team.name %>.gif"></div>
+      <% _.each(data.teams, function(team) { console.log(team) %>
+        <div id="<%= team.name %>">
+          <img src="static/img/logos/<%= team.name %>.gif">
+          <br>
+          $<%= (team.cap_total/1000000).toFixed(1) %>M
+        </div>
       <% }) %>
   </script>
   <div id="links" class="logos"></div>
@@ -61,7 +65,7 @@
 
   <div id="footer" class="container">
     <p>
-      Visualizing how teams spend their money. Larger circles === more money spent. 
+      Visualizing how teams spend their money. Larger circles represent more money spent. 
       <br>Hover over individual positions for more details.
       <br><br><br>
       Created by <a href="http://linkedin.com/in/meissler" target="_blank">Joe Meissler.</a>
