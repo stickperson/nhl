@@ -215,17 +215,19 @@ var salary = (function () {
       positions.forEach(function(p) {
         var circle = d3.selectAll('#' + p)
           .datum(seed[p])
-          .attr('r', function(d) {
-            return scale(d.cap);
-          })
-          .attr('fill', '#' + data.primary_color)
-          .attr('stroke', '#' + data.secondary_color)
-          .style('opacity', CONFIG.selectedOpacity)
-          .style('stroke-width', CONFIG.unselectedStrokeWidth)
           .on({
             mouseover: positionSelected,
             mouseout: positionUnselected
-          });
+          })
+          .transition()
+          .duration(750)
+            .attr('r', function(d) {
+              return scale(d.cap);
+            })
+            .attr('fill', '#' + data.primary_color)
+            .attr('stroke', '#' + data.secondary_color)
+            .style('opacity', CONFIG.selectedOpacity)
+            .style('stroke-width', CONFIG.unselectedStrokeWidth);
       });
     },
     updateBox: function() {
