@@ -2,7 +2,7 @@ var salary = (function () {
   var CONFIG = {
     minCircleRadius: 20,
     maxCircleRadius: 50,
-    selectedStrokeWidth: 2.5,
+    selectedStrokeWidth: 2,
     unselectedStrokeWidth: 2,
     selectedOpacity: 0.6,
     unselectedOpacity: 0.2,
