@@ -1,5 +1,3 @@
-var hello = 'test';
-
 var salary = (function () {
   var CONFIG = {
     minCircleRadius: 20,
