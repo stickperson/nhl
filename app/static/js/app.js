@@ -133,10 +133,28 @@ var salary = (function () {
         .text('GOALIES');
     },
     drawCircles: function() {
-      var data = this.data;
+      var data = this.data,
+        stats = this.stats;
 
-      $('#current-logo').html('<img src="static/img/logos/' + data.name + '.gif">');
-      $('#current-team').html('<h3><a href="http://' + data.name + '.nhl.com" target="_blank">' + data.location + ' ' + data.full_name + '</a></h3>');
+      $('#current-logo').html();
+      $('#current-team').html();
+      currentTemplate = _.template($('#currentTemplate').html());
+      currentTeam = $('#current-team');
+      currentTeam
+        .html(currentTemplate({
+          data: {
+            name: data.name,
+            full_name: data.full_name,
+            location: data.location,
+            c_cap: convertCap(data.center_cap),
+            rw_cap: convertCap(data.rw_cap),
+            lw_cap: convertCap(data.lw_cap),
+            d_cap: convertCap(data.d_cap),
+            g_cap: convertCap(data.g_cap),
+            stats: stats
+          }
+        }));
+
       var seed = {};
       var centers = {
         'position': 'Centers',
@@ -229,14 +247,6 @@ $(function() {
     orderedTeams = _.sortBy(data.objects, function(d) {
       return d.location;
     });
-    var random = _.random(0, 29);
-    var random_team = data.objects[random];
-    $.get('api/v1/ateam?name=' + random_team.name, function(d) {
-      s.data = d['objects'][0];
-      s.setupLabels();
-      s.drawCircles();
-      s.updateBox();
-    });
     var linksTemplate = _.template(d3.select('#linksTemplate').html());
     links = d3.select('#links');
     links
@@ -245,6 +255,27 @@ $(function() {
           teams: orderedTeams
         }
       }));
+    var stats = {};
+    var c_avg = (d3.mean(_.pluck(data.objects, 'center_cap'))/1000000).toFixed(3);
+    var lw_avg = (d3.mean(_.pluck(data.objects, 'lw_cap'))/1000000).toFixed(3);
+    var rw_avg = (d3.mean(_.pluck(data.objects, 'rw_cap'))/1000000).toFixed(3);
+    var d_avg = (d3.mean(_.pluck(data.objects, 'd_cap'))/1000000).toFixed(3);
+    var g_avg = (d3.mean(_.pluck(data.objects, 'g_cap'))/1000000).toFixed(3);
+    stats['c'] = c_avg;
+    stats['lw'] = lw_avg;
+    stats['rw'] = rw_avg;
+    stats['d'] = d_avg;
+    stats['g'] = g_avg;
+    s.stats = stats;
+    var random = _.random(0, 29);
+    var random_team = data.objects[random];
+    $.get('api/v1/ateam?name=' + random_team.name, function(d) {
+      s.data = d['objects'][0];
+      s.setupLabels();
+      s.drawCircles();
+      s.updateBox();
+    });
+
     $('#links div').on('click', function() {
       var id = $(this).attr('id');
       $.get('api/v1/ateam?name=' + id, function(data) {

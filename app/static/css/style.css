@@ -29,14 +29,31 @@ a {
 
 #selected-position {
   pointer-events:none;
-  display: none;
   position: absolute;
+  display: none;
   background: #fff;
   border: 1px solid #333;
   padding: 8px;
   box-shadow: 2px 2px 2px #333;
   font-family: Verdana, sans-serif;
   font-size: 11px;
+}
+
+#current-team table {
+  display: inline-block;
+  border: 1px solid #333;
+  padding: 8px;
+  margin-top: 5px;
+  font-family: Verdana, sans-serif;
+  font-size: 11px;
+}
+
+#current-team tr > td:first-child {
+  font-weight: bold;
+}
+
+#current-team td {
+  text-align: left;
 }
 
 #selected-position h2, .logos h2 {
@@ -110,14 +127,14 @@ a {
   margin: 0;
 }
 
-#current-team h3, {
+#current-text h3, {
   font-size: 25px;
   font-weight: 100;
   letter-spacing: 10px;
   margin: 5px;
 }
 
-#current-team a {
+#current-text a {
   font-size: 25px;
   font-weight: 100;
   letter-spacing: 10px;

@@ -34,7 +34,7 @@
   </script>
 
   <script type="text/underscore" id="linksTemplate">
-      <% _.each(data.teams, function(team) { console.log(team) %>
+      <% _.each(data.teams, function(team) { %>
         <div id="<%= team.name %>">
           <img src="static/img/logos/<%= team.name %>.gif">
           <br>
@@ -42,9 +42,45 @@
         </div>
       <% }) %>
   </script>
+
+  <script type="text/underscore" id="currentTemplate">
+    <div id="current-text">
+      <h3><a href="http://<%= data.name %>.nhl.com" target="_blank"><%= data.location %> <%= data.full_name %></a></h3>
+    </div>
+    <div id="current-logo" class="logos">
+      <img src="static/img/logos/<%= data.name %>.gif">
+    </div>
+    <div id="current-comparison">
+      <table cellspacing=5>
+        <tr>
+          <th></th>
+          <th>LW</th>
+          <th>C</th>
+          <th>RW</th>
+          <th>D</th>
+          <th>G</th>
+        </tr>
+        <tr>
+          <td>Team: </td>
+          <td>$<%= data.lw_cap %>
+          <td>$<%= data.c_cap %>
+          <td>$<%= data.rw_cap %>
+          <td>$<%= data.d_cap %>
+          <td>$<%= data.g_cap %>
+        </tr>
+        <tr>
+          <td>League: </td>
+          <td>$<%= data.stats.lw %>M
+          <td>$<%= data.stats.c %>M
+          <td>$<%= data.stats.rw %>M
+          <td>$<%= data.stats.d %>M
+          <td>$<%= data.stats.g %>M
+        </tr>
+      </table>
+    </div>
+  </script>
   <div id="links" class="logos"></div>
   <div id="current-team"></div>
-  <div id="current-logo" class="logos"></div>
   <svg id="ice">
     <g id="forwards">
       <circle id="lw" cx="280" cy="125" r="0" />
