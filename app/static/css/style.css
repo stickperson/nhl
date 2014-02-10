@@ -48,12 +48,13 @@ a {
   font-size: 11px;
 }
 
-#current-team tr > td:first-child {
-  font-weight: bold;
-}
-
 #current-team td {
   text-align: left;
+}
+
+#current-team tr > td:first-child {
+  font-weight: bold;
+  text-align: right;
 }
 
 #selected-position h2, .logos h2 {
