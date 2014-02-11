@@ -30,7 +30,8 @@ a {
 #selected-position {
   pointer-events:none;
   position: absolute;
-  display: none;
+  display: block;
+  opacity: 0;
   background: #fff;
   border: 1px solid #333;
   padding: 8px;

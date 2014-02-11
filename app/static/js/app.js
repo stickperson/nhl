@@ -64,7 +64,7 @@ var salary = (function () {
           logo: position.logo_name
         }
       }))
-      .style('display', 'block')
+      .style('opacity', 1)
       .style('top', top + offsetTop + 'px')
       .style('left', left + offsetLeft + 'px');
   };
@@ -72,7 +72,7 @@ var salary = (function () {
   var removePopup = function() {
     popup = $('#selected-position');
     popup.html('');
-    popup.css('display', 'none');
+    popup.css('opacity', 0);
   };
 
   return {
