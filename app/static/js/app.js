@@ -136,16 +136,25 @@ var salary = (function () {
       var data = this.data,
         stats = this.stats;
 
-      $('#current-logo').html();
-      $('#current-team').html();
-      currentTemplate = _.template($('#currentTemplate').html());
-      currentTeam = $('#current-team');
+      var currentTemplate = _.template($('#currentTemplate').html());
+      var currentTeam = $('#current-team');
       currentTeam
         .html(currentTemplate({
           data: {
             name: data.name,
             full_name: data.full_name,
             location: data.location,
+          }
+        }));
+
+      var statsTemplate = _.template($('#statsTemplate').html());
+      var statsComparison = $('#stats');
+      statsComparison
+        .html(statsTemplate({
+          data: {
+            name: data.name,
+            location: data.location,
+            full_name: data.full_name,
             c_cap: convertCap(data.center_cap),
             rw_cap: convertCap(data.rw_cap),
             lw_cap: convertCap(data.lw_cap),

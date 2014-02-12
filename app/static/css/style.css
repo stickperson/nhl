@@ -40,7 +40,7 @@ a {
   font-size: 11px;
 }
 
-#current-team table {
+#stats table {
   display: inline-block;
   border: 1px solid #333;
   padding: 8px;
@@ -49,11 +49,11 @@ a {
   font-size: 11px;
 }
 
-#current-team td {
+#stats td {
   text-align: left;
 }
 
-#current-team tr > td:first-child {
+#stats tr > td:first-child {
   font-weight: bold;
   text-align: right;
 }
