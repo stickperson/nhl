@@ -39,7 +39,8 @@ class TeamResource(ModelResource):
         resource_name = 'ateam'
         limit = 1000
         filtering = {
-            'name': ALL
+            'name': ALL,
+            'id': ALL
         }
         fields = ['center_cap', 'd_cap', 'full_name', 'g_cap', 'location', 'lw_cap', 'name', 'primary_color', 'rw_cap', 'secondary_color']
         max_limit = 1
