@@ -1,4 +1,5 @@
 *.pyc
+README.md
 .*
 !/.gitignore
 salaries/local.py
