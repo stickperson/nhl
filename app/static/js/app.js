@@ -246,7 +246,7 @@ var salary = (function () {
         .datum(this.data)
         .style('border', function(d) {
           id = $(this).attr('id');
-          return id == data.name ? '1px solid #ccc' : 'none';
+          return id == data.name ? '1px solid #ccc' : '1px solid white';
         });
     }
   };
