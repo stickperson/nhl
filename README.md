@@ -5,3 +5,5 @@ Small project to visualize how NHL teams spend their money. Data collected from 
 
 View at caphits.com
 
+
+![](http://i.imgur.com/Ksi8L2z.png)
