@@ -1,11 +1,11 @@
 [global]
-ApplicationName=nhlsalaries
+ApplicationName=nhl2
 AwsCredentialFile=/Users/joemeissler/.elasticbeanstalk/aws_credential_file
 DevToolsEndpoint=git.elasticbeanstalk.us-west-2.amazonaws.com
-EnvironmentName=nhlsalaries-env
+EnvironmentName=nhl2-env
 EnvironmentType=SingleInstance
 InstanceProfileName=aws-elasticbeanstalk-ec2-role
-OptionSettingFile=/Users/joemeissler/projects/salaries/salaries/.elasticbeanstalk/optionsettings.nhlsalaries-env
+OptionSettingFile=/Users/joemeissler/projects/test/nhl/.elasticbeanstalk/optionsettings.nhl2-env
 RdsDeletionPolicy=Delete
 RdsEnabled=Yes
 RdsSourceSnapshotName=
