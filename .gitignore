@@ -2,3 +2,7 @@
 README.md
 .*
 !/.gitignore
+salaries/local.py
+salaries/local_example.py
+.ebextensions/
+.elasticbeanstalk/
